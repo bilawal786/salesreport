@@ -138,9 +138,7 @@
                     <div class="row">
                         <div class="col-12">
                             <!-- /.card -->
-                            @php
-                                $sales = \App\Sales::whereDate('date', \Carbon\Carbon::today())->get();
-                            @endphp
+
                             <div class="card">
                                 <div class="card-body">
                                     <table class="table table-bordered table-striped">
@@ -263,7 +261,7 @@
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
                 ["Status", "Numbers", {role: "style"}],
-                @foreach($sales as $sale)
+                    @foreach($sales as $sale)
                 ["{{$sale->user->name}}", {{$sale->visitor}}, "#02abff"],
                 @endforeach
             ]);
