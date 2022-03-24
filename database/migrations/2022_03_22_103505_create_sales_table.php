@@ -16,8 +16,15 @@ class CreateSalesTable extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id');
+            $table->string('date')->nullable();
             $table->string('sales')->nullable();
             $table->string('visitor')->nullable();
+            $table->string('se')->nullable();
+            $table->string('ma')->nullable();
+            $table->string('bk')->nullable();
+            $table->string('lu')->nullable();
+            $table->string('at')->nullable();
+            $table->string('di')->nullable();
             $table->timestamps();
         });
     }

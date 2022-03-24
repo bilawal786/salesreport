@@ -128,6 +128,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/sales/report', 'HomeController@salesReport')->name('sales.report');
 Route::get('/sales/weeklyreport', 'HomeController@weeklyreport')->name('sales.weeklyreport');
 Route::get('/sales/monthlyreport', 'HomeController@monthlyreport')->name('sales.monthlyreport');
+Route::post('/report/search', 'HomeController@search')->name('report.search');
 
 
 Route::get('/department/index', 'DepartmentController@index')->name('department.index');

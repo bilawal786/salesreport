@@ -28,8 +28,8 @@
 
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title"></h3>
-                                 <a href="{{route('department.create')}}" class="btn btn-sm btn-success" style="float: right;"><i class="fa fa-plus"></i>  Add New</a>
+                                <h3 class="card-title">All Departments</h3>
+{{--                                 <a href="{{route('department.create')}}" class="btn btn-sm btn-success" style="float: right;"><i class="fa fa-plus"></i>  Add New</a>--}}
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -49,11 +49,11 @@
                                             <td>{{$user->email}}</td>
                                             <td>{{$user->created_at}}</td>
                                             <td>
-                                                <a id="delete" href="{{route('department.delete', ['id' => $user->id])}}"
-                                                   class="btn btn-sm btn-danger"
-                                                >
-                                                    <i class="fa fa-times"></i>
-                                                </a>
+{{--                                                <a id="delete" href="{{route('department.delete', ['id' => $user->id])}}"--}}
+{{--                                                   class="btn btn-sm btn-danger"--}}
+{{--                                                >--}}
+{{--                                                    <i class="fa fa-times"></i>--}}
+{{--                                                </a>--}}
                                                 <a data-toggle="modal" data-target="#modaledit{{$user->id}}"
                                                    class="btn btn-sm btn-primary"
                                                 >

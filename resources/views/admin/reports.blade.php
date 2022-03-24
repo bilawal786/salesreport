@@ -121,9 +121,8 @@
                 width: 646,
                 height: 300,
                 bar: {groupWidth: "65%"},
-                legend: {position: "none"},
             };
-            var chart = new google.visualization.ColumnChart(document.getElementById('t_total'));
+            var chart = new google.visualization.PieChart(document.getElementById('t_total'));
             chart.draw(view, options);
         }
     </script>
@@ -155,9 +154,8 @@
                 width: 646,
                 height: 300,
                 bar: {groupWidth: "65%"},
-                legend: {position: "none"},
             };
-            var chart = new google.visualization.ColumnChart(document.getElementById('visitors'));
+            var chart = new google.visualization.PieChart(document.getElementById('visitors'));
             chart.draw(view, options);
         }
     </script>
@@ -190,9 +188,8 @@
                 width: 646,
                 height: 300,
                 bar: {groupWidth: "65%"},
-                legend: {position: "none"},
             };
-            var chart = new google.visualization.ColumnChart(document.getElementById('t_total11'));
+            var chart = new google.visualization.PieChart(document.getElementById('t_total11'));
             chart.draw(view, options);
         }
     </script>
@@ -224,9 +221,8 @@
                 width: 646,
                 height: 300,
                 bar: {groupWidth: "65%"},
-                legend: {position: "none"},
             };
-            var chart = new google.visualization.ColumnChart(document.getElementById('visitors11'));
+            var chart = new google.visualization.PieChart(document.getElementById('visitors11'));
             chart.draw(view, options);
         }
     </script>

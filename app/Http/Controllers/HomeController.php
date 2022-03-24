@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $sales = \App\Sales::whereDate('created_at', \Carbon\Carbon::today())->get();
+        $sales = \App\Sales::whereDate('date', \Carbon\Carbon::today())->get();
         return view('admin.index' , compact('sales'));
     }
 
@@ -62,18 +62,22 @@ class HomeController extends Controller
       return Redirect()->back()->with($notification);
     }
     public function salesReport(){
-        $sales = \App\Sales::whereDate('created_at', \Carbon\Carbon::today())->get();
-        $salesyesterday = \App\Sales::whereDate('created_at', \Carbon\Carbon::yesterday())->get();
+        $sales = \App\Sales::whereDate('date', \Carbon\Carbon::today())->get();
+        $salesyesterday = \App\Sales::whereDate('date', \Carbon\Carbon::yesterday())->get();
         return view('admin.reports', compact('sales', 'salesyesterday'));
     }
     public function weeklyreport(){
-        $sales = \App\Sales::whereBetween('created_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->get();
-        $salesyesterday = \App\Sales::whereDate('created_at', \Carbon\Carbon::now()->startOfWeek()->subWeek())->get();
+        $sales = \App\Sales::whereBetween('date', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->get();
+        $salesyesterday = \App\Sales::whereDate('date', \Carbon\Carbon::now()->startOfWeek()->subWeek())->get();
         return view('admin.weeklyreport', compact('sales', 'salesyesterday'));
     }
     public function monthlyreport(){
-        $sales = \App\Sales::whereMonth('created_at', Carbon::now()->month)->get();
-        $salesyesterday = \App\Sales::whereMonth('created_at', '=', Carbon::now()->subMonth()->month)->get();
+        $sales = \App\Sales::whereMonth('date', Carbon::now()->month)->get();
+        $salesyesterday = \App\Sales::whereMonth('date', '=', Carbon::now()->subMonth()->month)->get();
         return view('admin.monthlyreport', compact('sales', 'salesyesterday'));
+    }
+    public function search(Request $request){
+        $sales = \App\Sales::whereDate('date', $request->date)->get();
+        return view('admin.index' , compact('sales'));
     }
 }
