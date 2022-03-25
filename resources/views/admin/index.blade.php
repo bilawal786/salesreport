@@ -140,6 +140,9 @@
                             <!-- /.card -->
 
                             <div class="card">
+                                <div class="card-header">
+                                    <button class="btn btn-success btn-sm float-right" onclick="window.print()">Print this page</button>
+                                </div>
                                 <div class="card-body">
                                     <table class="table table-bordered table-striped">
                                         <thead>

@@ -25,6 +25,30 @@ class UserSeeder extends Seeder
            'password' => Hash::make('12345678'),
         ]);
         User::create([
+            'name'     => 'Lodges',
+            'role'     => '1',
+            'email'    => 'reservations@caravane.earth',
+            'password' => Hash::make('12345678'),
+        ]);
+        User::create([
+            'name'     => 'Wellness',
+            'role'     => '1',
+            'email'    => 'ruby@caravane.earth',
+            'password' => Hash::make('12345678'),
+        ]);
+        User::create([
+            'name'     => 'Workshops',
+            'role'     => '1',
+            'email'    => 'yara@caravane.earth',
+            'password' => Hash::make('12345678'),
+        ]);
+        User::create([
+            'name'     => 'F & B',
+            'role'     => '1',
+            'email'    => 'shefa.k@caravane.earth',
+            'password' => Hash::make('12345678'),
+        ]);
+        User::create([
            'name'     => 'Agriculture',
            'role'     => '1',
            'email'    => 'agriculture@gmail.com',
@@ -52,30 +76,6 @@ class UserSeeder extends Seeder
            'name'     => 'Events',
            'role'     => '1',
            'email'    => 'mazhar@caravane.earth',
-           'password' => Hash::make('12345678'),
-        ]);
-        User::create([
-           'name'     => 'F & B',
-           'role'     => '1',
-           'email'    => 'shefa.k@caravane.earth',
-           'password' => Hash::make('12345678'),
-        ]);
-        User::create([
-           'name'     => 'Lodges',
-           'role'     => '1',
-           'email'    => 'reservations@caravane.earth',
-           'password' => Hash::make('12345678'),
-        ]);
-        User::create([
-           'name'     => 'Wellness',
-           'role'     => '1',
-           'email'    => 'ruby@caravane.earth',
-           'password' => Hash::make('12345678'),
-        ]);
-        User::create([
-           'name'     => 'Workshops',
-           'role'     => '1',
-           'email'    => 'yara@caravane.earth',
            'password' => Hash::make('12345678'),
         ]);
     }
