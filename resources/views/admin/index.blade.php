@@ -87,28 +87,28 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="exampleInputFile">BK</label>
-                                                        <input type="text" class="form-control"
+                                                        <input type="number" class="form-control"
                                                                required="" name="bk">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="exampleInputFile">LU</label>
-                                                        <input type="text" class="form-control"
+                                                        <input type="number" class="form-control"
                                                                required="" name="lu">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="exampleInputFile">AT</label>
-                                                        <input type="text" class="form-control"
+                                                        <input type="number" class="form-control"
                                                                required="" name="at">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="exampleInputFile">DI</label>
-                                                        <input type="text" class="form-control"
+                                                        <input type="number" class="form-control"
                                                                required="" name="di">
                                                     </div>
                                                 </div>
@@ -116,7 +116,7 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="exampleInputFile">Visitors</label>
-                                                        <input type="text" class="form-control"
+                                                        <input type="number" class="form-control"
                                                                required="" name="visitor">
                                                     </div>
                                                 </div>
@@ -150,7 +150,25 @@
                                             @foreach($sales as $sale)
                                                 <th>{{$sale->user->name}}</th>
                                             @endforeach
-                                            <th>Total</th>
+                                            <th>Total Sales</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            @foreach($sales as $sale)
+                                                <td>{{$sale->visitor}}</td>
+                                            @endforeach
+                                            <td>QTR {{$sales->sum('visitor')}}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                        <tr>
+                                            @foreach($sales as $sale)
+                                                <th>{{$sale->user->name}}</th>
+                                            @endforeach
+                                            <th>Total Visitors</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -158,7 +176,7 @@
                                             @foreach($sales as $sale)
                                                 <td>{{$sale->sales}}</td>
                                             @endforeach
-                                            <td>{{$sales->sum('sales')}}</td>
+                                            <td>QTR {{$sales->sum('sales')}}</td>
                                         </tr>
                                         </tbody>
                                     </table>
